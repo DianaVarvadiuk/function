@@ -1,47 +1,40 @@
 //function 1
 function getMaxDigit (number) {
-    const arr = number.toString().split('');
-    return Math.max(...arr);
+    const arr = number.toString().split(' ');
+  return Math.max(...arr);
   }
   //function 2
-function power(base, exp){
+function power(base, exp) {
     let result = 1;
-    for(let i = 0; i <exp; i++)
-    {
-        result = result * base;
+    for (let i = 0; i < exp; i++) {
+        result *= base;
     }
-    return(result);
+ return(result);
 }
 //funcion 3
 function formattingName(str) {
-    if (!str) return false;
-    return str[0].toUpperCase() + str.slice(1);
-    
+    return str[0].toUpperCase() + str.slice(1); 
   }
   //function 4
-  function sumPaymentOfTax(salery)
-  {
+  function sumPaymentOfTax(salery) {
       const tax = 19.5;
-      const sum = salery-(salery * tax)/100;
+      const sum = salery - (salery * tax)/100;
       return sum;
   }
-
   //function 5
-  function getRandomInt(min,max) {
+  function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
   }
-  
  // function 6
-  function  repetitionLetter(letter,line){
-      let count = 0;
+  function  repetitionLetter(letter, line) {
+    let count = 0;
    for (let i = 0; i < line.length; i++) {
-        if(line[i] === letter){
+        if(line[i] === letter) {
           count++;
         }
        }
-       return count;
+    return count;
      }
-
      //function 7
   function convertCurrency(str) {
     if ( str.endsWith('$')) {
@@ -56,39 +49,36 @@ function formattingName(str) {
     }
   }
      //function 8
-      function getRandomPassword(len){
-        let password = " ";
-        const str = "12345678";
-        for (let i = 0; i < len; i++){
-          password+=str.charAt(Math.floor(Math.random() * str.length));
-        } 
-        return password;
+      function getRandomPassword(length,max) {
+        max=8;
+      let password = " ";
+      for( i=0; i<length; i++) {
+        password+= Math.floor(Math.random()*max);
+        console.log(password);
+      } 
+      return password;
       }
       //function 9
-       function deleteLetters(letter,word) {
-        const result= word.replaceAll(letter,'');
+       function deleteLetters(letter, word) {
+        const result = word.replaceAll(letter,'');
         console.log('result :', result);
-         return result;
+        return result;
        }
        //function 10
       function isPalyndrom(string) {
-        const wordRevarse = string.split('').reverse().join('');
-          if(wordRevarse === string){
-            return true;
-          } else {
-            return false;
-          }
+      const wordRevarse = string.split('').reverse().join('');
+      return wordRevarse === string;
         }
       //function 11
-      function deleteDuplicateLetter(str){
+      function deleteDuplicateLetter(str) {
         str = str.toLowerCase();
-      let result = "";
-      for( i=0; i<str.length; i++){
+      let result = " ";
+      for ( i=0; i<str.length; i++) {
         if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
           result += str[i];
         }
      }
-   return result;
+      return result;
       }
      document.writeln(`<p> Function #1 - Gets any number and outputs the largest digit in that number:${getMaxDigit(9, 385)}</p>`);  
      document.writeln(`<p> Function #2 - Сalculates the degree of number::${power(2,10)}</p>`);
