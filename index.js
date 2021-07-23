@@ -6,7 +6,7 @@ function getMaxDigit (number) {
   //function 2
 function power(base, exp) {
     let result = 1;
-    for (let i = 0; i < exp; i++) {
+    for (let i = 0; i < exp; i++ ) {
         result *= base;
     }
  return(result);
@@ -18,7 +18,7 @@ function formattingName(str) {
   //function 4
   function sumPaymentOfTax(salery) {
       const tax = 19.5;
-      const sum = salery - (salery * tax)/100;
+      const sum = salery - (salery * tax) / 100;
       return sum;
   }
   //function 5
@@ -28,7 +28,7 @@ function formattingName(str) {
  // function 6
   function  repetitionLetter(letter, line) {
     let count = 0;
-   for (let i = 0; i < line.length; i++) {
+   for (let i = 0; i < line.length; i++ ) {
         if(line[i] === letter) {
           count++;
         }
@@ -38,9 +38,8 @@ function formattingName(str) {
      //function 7
   function convertCurrency(str) {
     if ( str.endsWith('$')) {
-      console.log(str);
       const uaCurrency = str.slice(0, str.length - 1)
-      return (uaCurrency* 25) + 'UAH'
+      return (uaCurrency * 25) + 'UAH'
     } else if ( str.endsWith('UAH')) {
       const dolarCurrency = str.slice(0, str.length - 3)
       return (dolarCurrency / 25) + "$";
@@ -49,19 +48,16 @@ function formattingName(str) {
     }
   }
      //function 8
-      function getRandomPassword(length,max) {
-        max=8;
+      function getRandomPassword(length=8) {
       let password = " ";
-      for( i=0; i<length; i++) {
-        password+= Math.floor(Math.random()*max);
-        console.log(password);
+      for( i = 0; i < length; i++) {
+        password += Math.floor(Math.random() * length);
       } 
       return password;
       }
       //function 9
        function deleteLetters(letter, word) {
         const result = word.replaceAll(letter,'');
-        console.log('result :', result);
         return result;
        }
        //function 10
@@ -73,7 +69,7 @@ function formattingName(str) {
       function deleteDuplicateLetter(str) {
         str = str.toLowerCase();
       let result = " ";
-      for ( i=0; i<str.length; i++) {
+      for ( i = 0; i < str.length; i ++) {
         if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
           result += str[i];
         }
